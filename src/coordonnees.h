@@ -10,13 +10,22 @@
 typedef struct Coordonnees
 {
 	char lieuDit[TAILLECHAINE];
-	char rue[TAILLECHAINE];
 	int numVoie;
+	char rue[TAILLECHAINE];
 	int numAppart;
 	char codePostal[CODEPOSTAL];
 	char ville[TAILLECHAINE];
 	char pays[TAILLECHAINE];
 	char numeroTel[TAILLENUMEROTEL];
 } Coordonnees;
+
+
+void saisirCoordonnees(Coordonnees* coordonnees);
+
+
+void afficherCoordonnees(Coordonnees coordonnees);
+
+
+void viderBuffer(void);
 
 #endif
