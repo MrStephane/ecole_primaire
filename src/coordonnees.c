@@ -85,17 +85,17 @@ void afficherCoordonnees(Coordonnees coordonnees)
 {
 	// On choisie entre l'affichage du lieu dit ou du numero de voie et de la rue
 	if (coordonnees.lieuDit[0] != '\0')
-		printf("%s\n", coordonnees.lieuDit);
+		printf("| %s\n", coordonnees.lieuDit);
 	else
-		printf("%d rue %s\n", coordonnees.numVoie, coordonnees.rue);
+		printf("| %d rue %s\n", coordonnees.numVoie, coordonnees.rue);
 	
 	// On affiche le numéro d'appartement s'il y en a un
 	if (coordonnees.numAppart != 0)
-		printf("Appartement %d\n", coordonnees.numAppart);
+		printf("| Appartement %d\n", coordonnees.numAppart);
 	
-	printf("%s %s\n", coordonnees.codePostal, coordonnees.ville);
-	printf("%s\n", coordonnees.pays);
-	printf("\nTel: %s", coordonnees.numeroTel);
+	printf("| %s %s\n", coordonnees.codePostal, coordonnees.ville);
+	printf("| %s\n|\n", coordonnees.pays);
+	printf("| Tel: %s", coordonnees.numeroTel);
 }
 
 
