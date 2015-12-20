@@ -19,10 +19,12 @@ void saisirCoordonnees(Coordonnees* coordonnees)
 			printf("Lieu dit : ");
 			scanf("%s", coordonnees->lieuDit);
 			viderBuffer();
-			// Si il s'agit d'un lieu dit alors on met le numero de rue à 0 et un caractère de fin de chaine au début du champ rue
+			// Si il s'agit d'un lieu dit alors on met le numero de rue et d'appartement à 0 et un caractère de fin de chaine au début du champ rue
 			coordonnees->numVoie = 0;
 			coordonnees->rue[0] = '\0';
+			coordonnees->numAppart = 0;
 			break;
+			
 		case 'N':
 		case 'n':
 			printf("Numero de voie : ");
@@ -31,30 +33,32 @@ void saisirCoordonnees(Coordonnees* coordonnees)
 			printf("Rue : ");
 			scanf("%s", coordonnees->rue);
 			viderBuffer();
+			
 			// Si il n'y a pas de lieu dit dans les coordonnées alors on met un caractère de fin de chaine sur la première case.
 			coordonnees->lieuDit[0] = '\0';
-			break;
-		default:
-			printf("Erreur de saisie.\n");
-	}
-	
-	printf("S'agit-il d'un immeuble ? (O/n) ");
-	scanf("%c", &estUnImmeuble);
-	viderBuffer();
-	
-	switch(estUnImmeuble)
-	{
-		case 'O':
-		case 'o':
-			printf("Numero d'appartement : ");
-			scanf("%d", &coordonnees->numAppart);
+			
+			printf("S'agit-il d'un immeuble ? (O/n) ");
+			scanf("%c", &estUnImmeuble);
 			viderBuffer();
+			
+			switch(estUnImmeuble)
+			{
+				case 'O':
+				case 'o':
+					printf("Numero d'appartement : ");
+					scanf("%d", &coordonnees->numAppart);
+					viderBuffer();
+					break;
+				case 'N':
+				case 'n':
+					// Si il n'y a pas d'appartement alors on met son numéro à 0
+					coordonnees->numAppart = 0;
+					break;
+				default:
+					printf("Erreur de saisie.\n");
+			}
 			break;
-		case 'N':
-		case 'n':
-			// Si il n'y a pas d'appartement alors on met son numéro à 0
-			coordonnees->numAppart = 0;
-			break;
+			
 		default:
 			printf("Erreur de saisie.\n");
 	}
@@ -98,5 +102,5 @@ void afficherCoordonnees(Coordonnees coordonnees)
 void viderBuffer(void)
 {
 	char c;
-	while((c=getChar()) != '\n');
+	while((c=getchar()) != '\n');
 }
