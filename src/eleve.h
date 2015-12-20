@@ -11,7 +11,17 @@ typedef struct Eleve
 {
 	Personne eleve;
 	//Classe* classe;
+	int nbTuteurs;
 	Personne tuteurs[NBTUTEURS];
 } Eleve;
+
+
+void saisirEleve(Eleve* e);
+
+
+void afficherEleve(Eleve e);
+
+
+void afficherDetailEleve(Eleve e);
 
 #endif
