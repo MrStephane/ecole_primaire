@@ -1,20 +1,28 @@
 CC=-gcc
 CFLAGS=-Wall -g
+EXEC=tests_untaires_date
+
+
+all: $(EXEC)
+
 
 # Compilation
 
 date.o: date.c
-	$(CC) $(CFLAGS) -o date.o -c date.c
+	$(CC) $(CFLAGS) -c $< -o $@ 
 
 tests_unitaires_date.o: tests_untaires_date.c
-	$(CC) -o tests_unitaires_date.o -c tests_unitaires_date.c $(CFLAGS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 
 # Edition de lien
 
 tests_unitaires_date: tests_unitaires_date.o date.o
-	$(CC) tests_unitaires_date.o date.o -o tests_unitaires_date
+	$(CC) $^ -o ^@
 
 
 clean:
-	rm -rf *.o *.exe *.out $(EXEC)
+	rm -rf *.o
+
+mrproper: clean
+	rm -rf *.exe *.out $(EXEC)
