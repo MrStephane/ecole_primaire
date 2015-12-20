@@ -36,7 +36,6 @@ void afficherPersonne(Personne p)
 	printf("| Nee le ");
 	afficherDate(p.dateDeNaissance);
 	printf(" (%d an%s)\n", p.age, p.age > 1 ? "s" : "");
-	printf("\n");
 }
 
 
