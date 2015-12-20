@@ -19,9 +19,12 @@ typedef struct Personne
 } Personne;
 
 
-void saisirPersonne(Personne* personne);
+void saisirPersonne(Personne* p);
 
 
-void afficherPersonne(Personne personne);
+void afficherPersonne(Personne p);
+
+
+void afficherDetailPersonne(Personne p);
 
 #endif

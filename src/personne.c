@@ -4,40 +4,50 @@
 
 
 
-void saisirPersonne(Personne* personne)
+void saisirPersonne(Personne* p)
 {
 	printf("Nom : ");
-	scanf("%s", personne->nom);
+	scanf("%s", p->nom);
 	viderBuffer();
 	
 	printf("Prenom : ");
-	scanf("%s", personne->prenom);
+	scanf("%s", p->prenom);
 	viderBuffer();
 	
 	printf("Garcon (g) / Fille (f) : ");
-	scanf("%c", &personne->genre);
+	scanf("%c", &p->genre);
 	viderBuffer();
 	
 	printf("Date de naissance (jj/mm/aaaa) : ");
-	saisirDate(&personne->dateDeNaissance);
+	saisirDate(&p->dateDeNaissance);
 	
 	printf("Age : ");
-	scanf("%d", &personne->age);
+	scanf("%d", &p->age);
 	viderBuffer();
 	
 	printf("\n\nCoordonnees :\n\n");
-	saisirCoordonnees(&personne->coordonnees);
+	saisirCoordonnees(&p->coordonnees);
 }
 
 
-void afficherPersonne(Personne personne)
+void afficherPersonne(Personne p)
 {
-	printf("| %s %s\n", personne.nom, personne.prenom);
+	printf("| %s %s\n", p.nom, p.prenom);
 	printf("| Nee le ");
-	afficherDate(personne.dateDeNaissance);
-	printf(" (%d an%s)\n", personne.age, personne.age > 1 ? "s" : "");
-	printf("| %s\n|\n", personne.genre == 'g' ? "Homme" : "Femme");
+	afficherDate(p.dateDeNaissance);
+	printf(" (%d an%s)\n", p.age, p.age > 1 ? "s" : "");
+	printf("\n");
+}
+
+
+void afficherDetailPersonne(Personne p)
+{
+	printf("| %s %s\n", p.nom, p.prenom);
+	printf("| Nee le ");
+	afficherDate(p.dateDeNaissance);
+	printf(" (%d an%s)\n", p.age, p.age > 1 ? "s" : "");
+	printf("| %s\n|\n", p.genre == 'g' ? "Homme" : "Femme");
 	printf("| Coordonnees :\n|\n");
-	afficherCoordonnees(personne.coordonnees);
+	afficherCoordonnees(p.coordonnees);
 	printf("\n");
 }
