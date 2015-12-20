@@ -11,8 +11,11 @@ int main()
 	printf("Veuillez saisir les informations d'une personne :\n\n");
 	saisirPersonne(&personne);
 	
-	printf("\nVoici les informations de la personne saisie :\n\n");
+	printf("\nVoici les informations simple de la personne saisie :\n\n");
 	afficherPersonne(personne);
+	
+	printf("\nVoici les informations detaille de la personne saisie :\n\n");
+	afficherDetailPersonne(personne);
 	
 	printf("\n\n");
 	return 0;
