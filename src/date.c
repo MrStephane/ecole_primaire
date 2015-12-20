@@ -12,5 +12,5 @@ void saisirDate(Date* d)
 
 void afficherDate(Date d)
 {
-	printf("%d/%d/%d", d.jour, d.mois, d.an);
+	printf("%.2d/%.2d/%.2d", d.jour, d.mois, d.an);
 }
