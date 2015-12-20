@@ -18,4 +18,10 @@ typedef struct Personne
 	Coordonnees coordonnees;
 } Personne;
 
+
+void saisirPersonne(Personne* personne);
+
+
+void afficherPersonne(Personne personne);
+
 #endif
